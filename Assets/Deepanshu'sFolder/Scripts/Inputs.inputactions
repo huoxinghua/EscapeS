@@ -1,5 +1,5 @@
 {
-    "name": "Input",
+    "name": "Inputs",
     "maps": [
         {
             "name": "Player",
@@ -139,17 +139,6 @@
                     "name": "",
                     "id": "05e5dd88-e05b-4961-b652-db2f0c331e71",
                     "path": "<Gamepad>/buttonSouth",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Action",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "44601d71-f74e-468f-914b-87c8c22dfc0f",
-                    "path": "<XInputController>/buttonSouth",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
