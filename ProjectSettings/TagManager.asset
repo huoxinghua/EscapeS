@@ -41,3 +41,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: BackGround Layer
+    uniqueID: 3926033081
+    locked: 0
+  - name: Smell Bomb Layer&collectables Layer
+    uniqueID: 1821520409
+    locked: 0
+  - name: Player&Enemy Layer
+    uniqueID: 1178891493
+    locked: 0
+  - name: Boundries&Hud Layer
+    uniqueID: 2402758145
+    locked: 0
