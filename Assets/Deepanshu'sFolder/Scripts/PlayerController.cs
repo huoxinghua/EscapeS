@@ -4,7 +4,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private InputManager inputManager;
     [SerializeField] private Transform playerTransform;
     [SerializeField] private Rigidbody2D playerRigidbody;
-    
     [SerializeField] private GameObject prefabToSpawn; 
     [SerializeField] private float moveDistance = 1f; 
     
