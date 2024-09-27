@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4070141774176892034}
   - component: {fileID: 696417843261085778}
   - component: {fileID: 3001127276041804788}
+  - component: {fileID: 6822446727408643125}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -98,7 +99,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputManager: {fileID: 4103301615661446656, guid: 45c760c2546045748867ea9114764f72, type: 3}
-  playerTransform: {fileID: 0}
-  playerRigidbody: {fileID: 0}
-  prefabToSpawn: {fileID: 0}
+  playerTransform: {fileID: 4070141774176892034}
+  playerRigidbody: {fileID: 6822446727408643125}
+  prefabToSpawn: {fileID: 2166879924563773954, guid: fd6c955498d4da644b0393a7c9f534fe, type: 3}
   moveDistance: 1
+--- !u!50 &6822446727408643125
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4915902497831378519}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 0
