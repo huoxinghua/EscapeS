@@ -7,43 +7,42 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject prefabToSpawn; 
     [SerializeField] private float moveDistance = 1f; 
     
-    private bool isMoving = false;
+    private readonly bool _isMoving = false;
     
     private Vector2 _movementDirection; 
-    private Vector2 lastSpawnPosition; 
+    private Vector2 _lastSpawnPosition; 
     private void OnEnable()
     {
-        inputManager.onMove += OnMove;
-        inputManager.onAction += OnAction;
+        inputManager.OnMove += OnMovement;
+        inputManager.OnAction += OnActionDone;
     }
     private void OnDisable()
     {
-        inputManager.onMove -= OnMove;
-        inputManager.onAction -= OnAction;
+        inputManager.OnMove -= OnMovement;
+        inputManager.OnAction -= OnActionDone;
     }
-    private void OnMove(Vector2 inputValue)
+    private void OnMovement(Vector2 inputValue)
     {
-        if (!isMoving) 
+        if (!_isMoving) 
         {
             _movementDirection = new Vector2(inputValue.x, inputValue.y).normalized;
             MovePlayer(_movementDirection);
         }
     }
-    private void OnAction(bool inputValue)
+    private void OnActionDone(bool inputValue)
     {
         if (inputValue)
         {
             Vector2 currentPosition = new Vector2(playerTransform.position.x, playerTransform.position.y);
-            // this will make sure that the smell bomb wont spawn in the same loaction
+            // this will make sure that the smell bomb won't spawn in the same location
             
-            if (currentPosition != lastSpawnPosition) 
+            if (currentPosition != _lastSpawnPosition) 
             {
                 Instantiate(prefabToSpawn, playerTransform.position, Quaternion.identity);
-                lastSpawnPosition = currentPosition; 
+                _lastSpawnPosition = currentPosition; 
             }
         }
     }
-    
     private void MovePlayer(Vector2 direction)
     {
         Vector2 newPosition = playerTransform.position + (Vector3)(direction * moveDistance);
