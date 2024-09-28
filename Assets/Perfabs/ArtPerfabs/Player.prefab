@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29bcf43c498ede643a6f7be4c33a7379, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputManager: {fileID: 4103301615661446656, guid: 45c760c2546045748867ea9114764f72, type: 3}
+  inputManager: {fileID: 0}
   playerTransform: {fileID: 4070141774176892034}
   playerRigidbody: {fileID: 6822446727408643125}
   prefabToSpawn: {fileID: 2166879924563773954, guid: fd6c955498d4da644b0393a7c9f534fe, type: 3}
