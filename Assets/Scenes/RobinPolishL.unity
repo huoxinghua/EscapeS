@@ -465,7 +465,7 @@ PrefabInstance:
     - target: {fileID: 7205840295057844670, guid: a1705be661e5cb44e9e83a7067b08d7d, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 698795898e3711348ae300df1d5d29bd, type: 2}
+      objectReference: {fileID: 9100000, guid: b973eef157c082748b0091455fe5efc7, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2052,6 +2052,10 @@ PrefabInstance:
       propertyPath: patrolPoints.Array.data[1]
       value: 
       objectReference: {fileID: 1813991337}
+    - target: {fileID: 8733544109304397263, guid: 379e8a7e0d7844a4e9372c97f4f4a55d, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: b613722b0e7e7cf489db4d25ea49254e, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
