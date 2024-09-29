@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 3563251077713564750}
   - component: {fileID: 271253083448885849}
   - component: {fileID: 4099359237914476556}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Poison 1
-  m_TagString: Untagged
+  m_TagString: SmellBomb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
