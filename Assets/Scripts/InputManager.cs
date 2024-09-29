@@ -3,13 +3,13 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 public class InputManager : MonoBehaviour
 {
-    public event Action<Vector2> onMove; 
-    public event Action<bool> onAction; 
+    public event Action<Vector2> OnMove; 
+    public event Action<bool> OnAction; 
     
     private Inputs _inputs;  
     
-    private Vector2 moveInput;  
-    private bool actionInput;  
+    private Vector2 _moveInput;  
+    private bool _actionInput;  
 
     private void OnEnable()
     {
@@ -24,11 +24,11 @@ public class InputManager : MonoBehaviour
     {
         _inputs = new Inputs(); 
         
-        _inputs.Player.Movement.performed += OnMove;
-        _inputs.Player.Movement.canceled += OnMove;
+        _inputs.Player.Movement.performed += OnMovement;
+        _inputs.Player.Movement.canceled += OnMovement;
         
-        _inputs.Player.Action.performed += OnAction;
-        _inputs.Player.Action.canceled += OnAction;
+        _inputs.Player.Action.performed += OnActionDone;
+        _inputs.Player.Action.canceled += OnActionDone;
     }
     
     private void EnableInput()
@@ -39,23 +39,23 @@ public class InputManager : MonoBehaviour
     {
         _inputs.Player.Disable(); 
     }
-    private void OnMove(InputAction.CallbackContext context)
+    private void OnMovement(InputAction.CallbackContext context)
     {
-        moveInput = context.ReadValue<Vector2>(); 
-        onMove?.Invoke(moveInput);  
+        _moveInput = context.ReadValue<Vector2>(); 
+        OnMove?.Invoke(_moveInput);  
     }
-    private void OnAction(InputAction.CallbackContext context)
+
+    private void OnActionDone(InputAction.CallbackContext context)
     {
-        actionInput = context.ReadValueAsButton();  
-        onAction?.Invoke(actionInput);  
+        _actionInput = context.ReadValueAsButton();
+        OnAction?.Invoke(_actionInput);
     }
-    
 //NOTE: this is to move the player continuously
     private void Update()
     {
-       if (onMove != null && moveInput != Vector2.zero)
+       if (OnMove != null && _moveInput != Vector2.zero)
        {
-            onMove(moveInput);  
+            OnMove(_moveInput);  
        }
     }
 }
