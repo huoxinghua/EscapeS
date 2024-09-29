@@ -11,10 +11,8 @@ public class PlayerController : MonoBehaviour
     
     private readonly bool _isMoving = false;
     private bool _canSpawn = true;
-    
     private Vector2 _movementDirection;
     private Vector2 _lastSpawnPosition;
-
     private void OnEnable()
     {
         inputManager.OnMove += OnMovement;
