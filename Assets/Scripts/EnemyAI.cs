@@ -12,7 +12,7 @@ public class EnemyAI : MonoBehaviour
     
     private bool _isStopped = false;
     private bool _isReversing = false;
-    private int currentPointIndex = 0;
+    private int _currentPointIndex = 0;
     void Update()
     {
         if (!_isStopped)
@@ -22,7 +22,7 @@ public class EnemyAI : MonoBehaviour
     }
     void Patrolling()
     { // do not touch this robin
-        Transform targetPoint = patrolPoints[currentPointIndex];
+        Transform targetPoint = patrolPoints[_currentPointIndex];
         Vector3 direction = targetPoint.position - transform.position;
         float distanceToTarget = Vector3.Distance(transform.position, targetPoint.position);
         float distanceToMove = Mathf.Min(speed * Time.deltaTime, distanceToTarget);
@@ -32,20 +32,20 @@ public class EnemyAI : MonoBehaviour
         {
             if (!_isReversing) // if it is not going in back direction then...
             {
-                currentPointIndex++;
-                if (currentPointIndex >= patrolPoints.Count)
+                _currentPointIndex++;
+                if (_currentPointIndex >= patrolPoints.Count)
                 {
                     _isReversing = true; //it will start going back
-                    currentPointIndex = patrolPoints.Count - 2;
+                    _currentPointIndex = patrolPoints.Count - 2;
                 }
             }
             else //without this it will come back to the previous point and stop
             {  
-                currentPointIndex--;
-                if (currentPointIndex < 0)
-                { //start moving again
+                _currentPointIndex--;
+                if (_currentPointIndex < 0)
+                { 
                     _isReversing = false; 
-                    currentPointIndex = 1; 
+                    _currentPointIndex = 1; 
                 }
             }
         }
