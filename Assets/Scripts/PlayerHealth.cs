@@ -1,37 +1,40 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+
 public class PlayerHealth : MonoBehaviour
 {
-    [SerializeField] public Transform _spawnpoint;
-    [SerializeField] public int _maxHealth = 3;
-    public int Health; 
-    private void OnTriggerEnter2D(Collider2D other)
+
+    public int maxHealth = 3;
+    public int currentHealth;
+
+    public Animator anim;
+    // Start is called before the first frame update
+    void Start()
     {
-        if(other.CompareTag("Enemy"))
+        currentHealth = 1;
+    }
+
+   void TakeDamage(int amount)
+    {
+        currentHealth -= amount;
+
+        if (currentHealth < 0) ;
+            //we are dead
+            // play dead animation
+            anim.SetBool("IsDead" , true);
+            // show gameOver scene 
+    }
+
+
+    public void Heal (int amount)
+    {
+        currentHealth += amount;
+
+        if (currentHealth < maxHealth) ;
         {
-            Health -= 1;
-            Debug.Log(Health);
-            
-            if (Health <= 0)
-            {
-                Die();
-            }
-            Respawn();
+            currentHealth = maxHealth ;
         }
     }
-    private void Awake()
-    {
-        Health = _maxHealth;
-    }
-    private void Respawn()
-    {
-        transform.position = _spawnpoint.position;
-    }
-    private void Die()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        GameManager._points = 0;
-    }
+
 }
-
-
