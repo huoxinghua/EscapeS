@@ -3,15 +3,17 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - SmellBomb
+  - Enemy
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - SmellBomb
   - Water
   - UI
-  - 
+  - Enemy
   - 
   - 
   - 
@@ -52,4 +54,7 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 2373725537
+    locked: 0
+  - name: HUD
+    uniqueID: 2147323739
     locked: 0
