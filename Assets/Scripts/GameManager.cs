@@ -6,4 +6,5 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
   public static int _points = 0;
+  
 }
