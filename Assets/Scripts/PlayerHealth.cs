@@ -2,17 +2,17 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class PlayerHealth : MonoBehaviour
 {
-    [SerializeField] public Transform _spawnpoint;
-    [SerializeField] public int _maxHealth = 3;
-    public int Health; 
+    [SerializeField] public Transform spawnpoint;
+    [SerializeField] public int maxHealth = 3;
+    public int health; 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if(other.CompareTag("Enemy"))
         {
-            Health -= 1;
-            Debug.Log(Health);
+            health -= 1;
+            Debug.Log(health);
             
-            if (Health <= 0)
+            if (health <= 0)
             {
                 Die();
             }
@@ -21,11 +21,11 @@ public class PlayerHealth : MonoBehaviour
     }
     private void Awake()
     {
-        Health = _maxHealth;
+        health = maxHealth;
     }
     private void Respawn()
     {
-        transform.position = _spawnpoint.position;
+        transform.position = spawnpoint.position;
     }
     private void Die()
     {
