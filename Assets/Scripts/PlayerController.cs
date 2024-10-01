@@ -8,11 +8,25 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject prefabToSpawn;
     [SerializeField] private float moveDistance = 0.1f;
     [SerializeField] private float spawnCooldownDuration = 5f;
+    [SerializeField] private SpriteRenderer spriteRenderer;
     
     private readonly bool _isMoving = false;
     private bool _canSpawn = true;
     private Vector2 _movementDirection;
     private Vector2 _lastSpawnPosition;
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            spriteRenderer.flipX = false;
+        }
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            spriteRenderer.flipX = true;
+        }
+    }
+
     private void OnEnable()
     {
         inputManager.OnMove += OnMovement;
@@ -62,5 +76,6 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(5f);  // just for delay
         _canSpawn = true;  
     }
+   
     
 }

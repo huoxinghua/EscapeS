@@ -1,10 +1,12 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Cinemachine;
 public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] public Transform spawnpoint;
     [SerializeField] public int maxHealth = 3;
-    public int health; 
+    public int health;
+    [SerializeField] private CinemachineVirtualCamera cinemachineCam;
     private void OnTriggerEnter2D(Collider2D other)
     {
         if(other.CompareTag("Enemy"))
@@ -26,11 +28,13 @@ public class PlayerHealth : MonoBehaviour
     private void Respawn()
     {
         transform.position = spawnpoint.position;
+        cinemachineCam.Priority = 20;
     }
     private void Die()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        GameManager._points = 0;
+        GameManager.Points = 0;
+        cinemachineCam.Priority = 20;
     }
 }
 
