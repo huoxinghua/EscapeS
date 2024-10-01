@@ -20,7 +20,7 @@ public class PlayerHealth : MonoBehaviour
             {
                 Die();
             }
-            Respawn();
+            //Respawn();
         }
     }
 
