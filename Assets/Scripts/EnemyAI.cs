@@ -21,7 +21,7 @@ public class EnemyAI : MonoBehaviour
         }
     }
     void Patrolling()
-    { // do not touch this robin
+    { 
         Transform targetPoint = patrolPoints[_currentPointIndex];
         Vector3 direction = targetPoint.position - transform.position;
         float distanceToTarget = Vector3.Distance(transform.position, targetPoint.position);
@@ -30,16 +30,16 @@ public class EnemyAI : MonoBehaviour
         transform.position += direction.normalized * distanceToMove;
         if (distanceToTarget <= pointRadius)
         {
-            if (!_isReversing) // if it is not going in back direction then...
+            if (!_isReversing) 
             {
                 _currentPointIndex++;
                 if (_currentPointIndex >= patrolPoints.Count)
                 {
-                    _isReversing = true; //it will start going back
+                    _isReversing = true;
                     _currentPointIndex = patrolPoints.Count - 2;
                 }
             }
-            else //without this it will come back to the previous point and stop
+            else 
             {  
                 _currentPointIndex--;
                 if (_currentPointIndex < 0)
@@ -51,7 +51,7 @@ public class EnemyAI : MonoBehaviour
         }
     }
     void OnTriggerEnter2D(Collider2D other)
-    { //do not touch this
+    { 
         if (other.CompareTag(smellBombTag))
         {
             StartCoroutine(HoldCooldown(holdDuration));

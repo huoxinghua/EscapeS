@@ -9,15 +9,18 @@ public class Collectables : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         { 
-            GameManager._points += 1;
-            Debug.Log(GameManager._points);
+            GameManager. Points += 1;
+            Debug.Log(GameManager.Points);
             Destroy(gameObject);
-            if (CollectDisplay.Count >= GameManager._points)
+            
+            if (CollectDisplay.Count >= GameManager.Points)
             {
-                GameObject collectDisplay = CollectDisplay[GameManager._points - 1];
+                GameObject collectDisplay = CollectDisplay[GameManager.Points - 1];
+                
                 if (collectDisplay != null && !collectDisplay.activeInHierarchy)
                 {
                     collectDisplay.SetActive(true); 
+                    
                 }
             }
         }
