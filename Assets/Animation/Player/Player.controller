@@ -14,7 +14,7 @@ AnimatorStateMachine:
     m_Position: {x: 382.71796, y: 89.0365, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -3373992767975278643}
-    m_Position: {x: 465.82928, y: 197.9411, z: 0}
+    m_Position: {x: 230, y: 350, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 2804727008923192498}
     m_Position: {x: 483.02484, y: -34.19757, z: 0}
@@ -41,7 +41,9 @@ AnimatorState:
   m_Name: WalkBack
   m_Speed: 1
   m_CycleOffset: 0
-  m_Transitions: []
+  m_Transitions:
+  - {fileID: -6295923561248993698}
+  - {fileID: 4075485336632908825}
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
@@ -91,11 +93,17 @@ AnimatorController:
   m_PrefabAsset: {fileID: 0}
   m_Name: Player
   serializedVersion: 5
-  m_AnimatorParameters: []
+  m_AnimatorParameters:
+  - m_Name: Blend
+    m_Type: 1
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
-    m_StateMachine: {fileID: -9127676341018166171}
+    m_StateMachine: {fileID: 3530317869128339445}
     m_Mask: {fileID: 0}
     m_Motions: []
     m_Behaviours: []

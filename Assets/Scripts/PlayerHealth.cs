@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Cinemachine;
@@ -18,14 +20,17 @@ public class PlayerHealth : MonoBehaviour
             {
                 Die();
             }
-            Respawn();
+            //Respawn();
         }
     }
-    private void Awake()
+
+   void TakeDamage(int amount)
     {
         health = maxHealth;
     }
-    private void Respawn()
+
+
+    public void Heal (int amount)
     {
         transform.position = spawnpoint.position;
         cinemachineCam.Priority = 20;
@@ -37,5 +42,3 @@ public class PlayerHealth : MonoBehaviour
         cinemachineCam.Priority = 20;
     }
 }
-
-
