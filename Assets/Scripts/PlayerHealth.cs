@@ -1,40 +1,44 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
+using Cinemachine;
 public class PlayerHealth : MonoBehaviour
 {
-
-    public int maxHealth = 3;
-    public int currentHealth;
-
-    public Animator anim;
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] public Transform spawnpoint;
+    [SerializeField] public int maxHealth = 3;
+    public int health;
+    [SerializeField] private CinemachineVirtualCamera cinemachineCam;
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        currentHealth = 1;
+        if(other.CompareTag("Enemy"))
+        {
+            health -= 1;
+            Debug.Log(health);
+            
+            if (health <= 0)
+            {
+                Die();
+            }
+            Respawn();
+        }
     }
 
    void TakeDamage(int amount)
     {
-        currentHealth -= amount;
-
-        if (currentHealth < 0) ;
-            //we are dead
-            // play dead animation
-            anim.SetBool("IsDead" , true);
-            // show gameOver scene 
+        health = maxHealth;
     }
 
 
     public void Heal (int amount)
     {
-        currentHealth += amount;
-
-        if (currentHealth < maxHealth) ;
-        {
-            currentHealth = maxHealth ;
-        }
+        transform.position = spawnpoint.position;
+        cinemachineCam.Priority = 20;
     }
-
+    private void Die()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        GameManager.Points = 0;
+        cinemachineCam.Priority = 20;
+    }
 }
