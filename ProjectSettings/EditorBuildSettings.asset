@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Main.unity
     guid: 8c952024056ebf34d92bb20b5707fbdf
+  - enabled: 1
+    path: Assets/Scenes/XinghuaNew.unity
+    guid: 894c64329cd26434fb914326b0e1ea1e
   m_configObjects: {}
