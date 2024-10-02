@@ -1250,6 +1250,10 @@ PrefabInstance:
       propertyPath: m_FlipX
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 696417843261085778, guid: a1705be661e5cb44e9e83a7067b08d7d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b79746f8161eec142b6f29f4d04894c9, type: 3}
     - target: {fileID: 3001127276041804788, guid: a1705be661e5cb44e9e83a7067b08d7d, type: 3}
       propertyPath: inputManager
       value: 
@@ -1268,11 +1272,11 @@ PrefabInstance:
       objectReference: {fileID: 2101403083}
     - target: {fileID: 4070141774176892034, guid: a1705be661e5cb44e9e83a7067b08d7d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -21
       objectReference: {fileID: 0}
     - target: {fileID: 4070141774176892034, guid: a1705be661e5cb44e9e83a7067b08d7d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4070141774176892034, guid: a1705be661e5cb44e9e83a7067b08d7d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -24987,10 +24991,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bb53ff0ee6711d41a650c3672ea24a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnpoint: {fileID: 1785575708}
-  maxHealth: 3
-  health: 0
-  cinemachineCam: {fileID: 743988838}
 --- !u!212 &2101403083 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 696417843261085778, guid: a1705be661e5cb44e9e83a7067b08d7d, type: 3}
