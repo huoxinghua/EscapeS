@@ -1664,7 +1664,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 7.5
+  orthographic size: 7
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1689,7 +1689,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -20.01, y: 4.460003, z: -10}
+  m_LocalPosition: {x: -20.01, y: -25.519999, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1753,67 +1753,6 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
---- !u!1001 &572573648
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2054240859588841695, guid: a1705be661e5cb44e9e83a7067b08d7d, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -19.099792
-      objectReference: {fileID: 0}
-    - target: {fileID: 2054240859588841695, guid: a1705be661e5cb44e9e83a7067b08d7d, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -13.424383
-      objectReference: {fileID: 0}
-    - target: {fileID: 2054240859588841695, guid: a1705be661e5cb44e9e83a7067b08d7d, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2054240859588841695, guid: a1705be661e5cb44e9e83a7067b08d7d, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2054240859588841695, guid: a1705be661e5cb44e9e83a7067b08d7d, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2054240859588841695, guid: a1705be661e5cb44e9e83a7067b08d7d, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2054240859588841695, guid: a1705be661e5cb44e9e83a7067b08d7d, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2054240859588841695, guid: a1705be661e5cb44e9e83a7067b08d7d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2054240859588841695, guid: a1705be661e5cb44e9e83a7067b08d7d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2054240859588841695, guid: a1705be661e5cb44e9e83a7067b08d7d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8228788922217104207, guid: a1705be661e5cb44e9e83a7067b08d7d, type: 3}
-      propertyPath: m_Name
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 8782696971449019287, guid: a1705be661e5cb44e9e83a7067b08d7d, type: 3}
-      propertyPath: inputManager
-      value: 
-      objectReference: {fileID: 1119149750}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: a1705be661e5cb44e9e83a7067b08d7d, type: 3}
 --- !u!1 &601055417
 GameObject:
   m_ObjectHideFlags: 3
@@ -3451,17 +3390,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1119149750 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4103301615661446656, guid: 45c760c2546045748867ea9114764f72, type: 3}
-  m_PrefabInstance: {fileID: 1141152954}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1119149746}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 364e1e7997bfb784e9ee89068bc9ea8d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1141152954
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25290,4 +25218,3 @@ SceneRoots:
   - {fileID: 1491717972}
   - {fileID: 656052163}
   - {fileID: 1141152954}
-  - {fileID: 572573648}
