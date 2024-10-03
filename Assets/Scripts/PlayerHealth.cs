@@ -1,44 +1,51 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Cinemachine;
+using System.Collections.Generic;
 public class PlayerHealth : MonoBehaviour
 {
-    [SerializeField] public Transform spawnpoint;
-    [SerializeField] public int maxHealth = 3;
-    public int health;
-    [SerializeField] private CinemachineVirtualCamera cinemachineCam;
+    [SerializeField] public List<Transform> healthPoints; 
+    [SerializeField] public Transform spawnpoint; 
+    [SerializeField] public int maxHealth = 3; 
+    public int health; 
+    [SerializeField] private CinemachineVirtualCamera cinemachineCam; 
+
+    private void Awake()
+    {
+        health = maxHealth;
+    }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.CompareTag("Enemy"))
+        if (other.CompareTag("Enemy"))
         {
-            health -= 1;
-            Debug.Log(health);
-            
+            health -= 1; 
+            if (healthPoints.Count > 0)
+            {
+                var lastHealthPoint = healthPoints[healthPoints.Count - 1];
+                lastHealthPoint.gameObject.SetActive(false); 
+                healthPoints.RemoveAt(healthPoints.Count - 1); 
+            }
             if (health <= 0)
             {
                 Die();
             }
-            //Respawn();
+            else
+            {
+                Respawn();
+            }
         }
     }
-
-   void TakeDamage(int amount)
-    {
-        health = maxHealth;
-    }
-
-
-    public void Heal (int amount)
+    private void Respawn()
     {
         transform.position = spawnpoint.position;
-        cinemachineCam.Priority = 20;
+        cinemachineCam.Priority = 20; 
     }
     private void Die()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        GameManager.Points = 0;
-        cinemachineCam.Priority = 20;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); 
+        GameManager.Points = 0; 
+        health = maxHealth; 
+        healthPoints.ForEach(hp => hp.gameObject.SetActive(true)); 
+        cinemachineCam.Priority = 20; 
     }
 }

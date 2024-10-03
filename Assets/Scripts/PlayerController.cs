@@ -26,19 +26,16 @@ public class PlayerController : MonoBehaviour
             spriteRenderer.flipX = true;
         }
     }
-
     private void OnEnable()
     {
         inputManager.OnMove += OnMovement;
         inputManager.OnAction += OnActionDone;
     }
-
     private void OnDisable()
     {
         inputManager.OnMove -= OnMovement;
         inputManager.OnAction -= OnActionDone;
     }
-
     private void OnMovement(Vector2 inputValue)
     {
         if (!_isMoving)
@@ -47,7 +44,6 @@ public class PlayerController : MonoBehaviour
             MovePlayer(_movementDirection);
         }
     }
-
     private void OnActionDone(bool inputValue)
     {
         if (inputValue && _canSpawn)
@@ -64,7 +60,6 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
-
     private void MovePlayer(Vector2 direction)
     {
         Vector2 newPosition = playerTransform.position + (Vector3)(direction * moveDistance);
@@ -73,9 +68,7 @@ public class PlayerController : MonoBehaviour
     private IEnumerator SpawnCooldown()
     {
         _canSpawn = false;  
-        yield return new WaitForSeconds(5f);  // just for delay
+        yield return new WaitForSeconds(spawnCooldownDuration);
         _canSpawn = true;  
     }
-   
-    
 }
