@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Cinemachine;
@@ -8,8 +9,15 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] public Transform spawnpoint; 
     [SerializeField] public int maxHealth = 3; 
     public int health; 
-    [SerializeField] private CinemachineVirtualCamera cinemachineCam; 
+    [SerializeField] private CinemachineVirtualCamera cinemachineCam;
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+    }
     private void Awake()
     {
         health = maxHealth;
@@ -34,9 +42,20 @@ public class PlayerHealth : MonoBehaviour
                 Respawn();
             }
         }
+
+        if (other.CompareTag("END"))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); 
+            GameManager.Points = 0; 
+            health = maxHealth; 
+            healthPoints.ForEach(hp => hp.gameObject.SetActive(true)); 
+            cinemachineCam.Priority = 20; 
+            SceneManager.LoadScene(0);
+        }
     }
     private void Respawn()
     {
+        
         transform.position = spawnpoint.position;
         cinemachineCam.Priority = 20; 
     }

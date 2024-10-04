@@ -1,20 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
-    private string SceneName;
-    public void LoadScene(string name)
+    public void StartGame()
     {
-        {
-            SceneName = name;
-           SceneManager.LoadScene(name);
-        }
+        SceneManager.LoadScene(1);
     }
     public void ExitGame()
     {
-        Application.Quit();
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
     }
 }
