@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Cinemachine;
@@ -26,6 +25,10 @@ public class PlayerHealth : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
+            if (other.CompareTag("END"))
+            {
+             Die();
+            }
             health -= 1; 
             if (healthPoints.Count > 0)
             {
@@ -42,24 +45,14 @@ public class PlayerHealth : MonoBehaviour
                 Respawn();
             }
         }
-
-        if (other.CompareTag("END"))
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); 
-            GameManager.Points = 0; 
-            health = maxHealth; 
-            healthPoints.ForEach(hp => hp.gameObject.SetActive(true)); 
-            cinemachineCam.Priority = 20; 
-            SceneManager.LoadScene(0);
-        }
     }
-    private void Respawn()
+    void Respawn()
     {
         
         transform.position = spawnpoint.position;
         cinemachineCam.Priority = 20; 
     }
-    private void Die()
+     void Die()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); 
         GameManager.Points = 0; 

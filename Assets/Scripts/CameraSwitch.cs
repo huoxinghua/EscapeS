@@ -1,11 +1,12 @@
 using UnityEngine;
 using Cinemachine;
+
 public class CameraSwitch : MonoBehaviour
 {
     [SerializeField] public Transform transisionspawnpoint;
     public CinemachineVirtualCamera mainCameraVcam;
     public CinemachineVirtualCamera secondaryCameraVcam;
-    [SerializeField] GameObject _player;
+    [SerializeField] GameObject player;
     private void Start()
     {
         mainCameraVcam.Priority = 10; 
@@ -27,6 +28,6 @@ public class CameraSwitch : MonoBehaviour
 
     private void TransisionSwitch()
     {
-       _player.transform.position =transisionspawnpoint.position; 
+       player.transform.position =transisionspawnpoint.position; 
     }
 }

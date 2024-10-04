@@ -6,6 +6,7 @@ TagManager:
   tags:
   - SmellBomb
   - Enemy
+  - END
   layers:
   - Default
   - TransparentFX
