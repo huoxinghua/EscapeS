@@ -1,10 +1,11 @@
-using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 public class GameManager : MonoBehaviour
 {
   public static int Points = 0;
   [SerializeField] GameObject gate;
-  [SerializeField] GameObject fgate;
+  
   private void Update()
   {
     if (Points >= 8)
@@ -13,7 +14,7 @@ public class GameManager : MonoBehaviour
     }
     if (Points >= 14)
     {
-      fgate.SetActive(false);
+      SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
   }
 }

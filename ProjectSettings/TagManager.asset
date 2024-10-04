@@ -6,6 +6,7 @@ TagManager:
   tags:
   - SmellBomb
   - Enemy
+  - END
   layers:
   - Default
   - TransparentFX
@@ -57,4 +58,7 @@ TagManager:
     locked: 0
   - name: HUD
     uniqueID: 2147323739
+    locked: 0
+  - name: New Layer 6
+    uniqueID: 972772665
     locked: 0
